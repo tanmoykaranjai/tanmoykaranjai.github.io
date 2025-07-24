@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<link href="https://fonts.maateen.me/kalpurush/font.css" rel="stylesheet">
+<style>
+p {
+  text-align: center;
+  font-size: 80px;
+color: white;
+  margin-top: 0px;
+-webkit-text-stroke:1px black;
+}
+  
+
+body {
+    font-family: 'Kalpurush', Arial, sans-serif !important;
+width: 100;
+}
+}
+
+</style>
+</head>
+<body background="durga face 2025.jpg" size="100%" style="background-size: contain;" >
+
+
+<audio controls autoplay loop  > 
+        <source src= "durgapujasound2025.mp3"
+        type="audio/mp3"> 
+    </audio> 
+
+<p id="baki">দুর্গাপূজা বাকি <br>আর মাত্র  
+</p><br>
+<p id="demo" style="color: yellow;"></p>
+<br>
+  <p id="demo2" style="color: yellow;"> </p>
+<script>
+
+// Set the date we're counting down to
+var countDownDate = new Date("SEP 29, 2025 5:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+console.log(days);
+var finalEnglishToBanglaNumber = {
+   0: "০",
+   1: "১",
+   2: "২",
+   3: "৩",
+   4: "৪",
+   5: "৫",
+   6: "৬",
+   7: "৭",
+   8: "৮",
+   9: "৯",
+};
+
+String.prototype.getDigitBanglaFromEnglish = function () {
+   var retStr = this;
+   for (var x in finalEnglishToBanglaNumber) {
+      retStr = retStr.replace(
+         new RegExp(x, "g"),
+         finalEnglishToBanglaNumber[x]
+      );
+   }
+   return retStr;
+};
+
+var english_number = "123456";
+var din= days;
+console.log(din);
+console.log(english_number);
+var din2=din.toString();
+console.log(din2);
+var bangla_converted_number = english_number.getDigitBanglaFromEnglish();
+var din3=din2.getDigitBanglaFromEnglish();
+console.log(din3);
+console.log(bangla_converted_number);
+
+var sec2=seconds.toString();
+var sec3=sec2.getDigitBanglaFromEnglish();
+
+var min2=minutes.toString();
+var min3=min2.getDigitBanglaFromEnglish();
+
+var gh2=hours.toString();
+var gh3=gh2.getDigitBanglaFromEnglish();
+
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = din3 + " দিন" ;
+
+   document.getElementById("demo2").innerHTML =  gh3 + "ঘন্টা  "
+  + min3 + "মিনিট "  + sec3+ "সেকেন্ড  ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+
+
+</script>
+
+
+</body>
+</html>
